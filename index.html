@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OEB Laboratory | Incheon National University</title>
+  <meta name="description" content="Occupational Ergonomics & Biomechanics Laboratory at Incheon National University">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #FAF9F6; --bg-warm: #F2F0EB; --bg-dark: #2C3530;
+      --accent: #5F7161; --accent-soft: #748E76; --accent-pale: #E8EDE9;
+      --text: #333333; --text-muted: #767676; --border: #E0DDD7; --card: #FFFFFF;
+      --nav-bg: rgba(250,249,246,0.92);
+      --photo-grad: linear-gradient(135deg, #A5B8A0, #8CA387);
+      --tag-bg: #F5F5F4; --tag-border: rgba(95,113,97,0.15);
+      --email-btn-bg: #FAFAF9; --hover-bg: rgba(242,240,235,0.5);
+      --contact-text: 250,249,246; --circle-border: #E0DDD7;
+      --hero-grad: linear-gradient(170deg, #F2F0EB 0%, #FAF9F6 50%, #F7F6F2 100%);
+    }
+    [data-theme="dark"] {
+      --bg: #121212; --bg-warm: #1A1A1A; --bg-dark: #0A0A0A;
+      --accent: #8AB094; --accent-soft: #9DC3A8; --accent-pale: rgba(138,176,148,0.12);
+      --text: #E0E0E0; --text-muted: #A0A0A0; --border: rgba(255,255,255,0.07); --card: #1E1E1E;
+      --nav-bg: rgba(18,18,18,0.92);
+      --photo-grad: linear-gradient(135deg, #6B9E78, #5A8668);
+      --tag-bg: rgba(255,255,255,0.04); --tag-border: rgba(138,176,148,0.2);
+      --email-btn-bg: rgba(255,255,255,0.04); --hover-bg: rgba(30,30,30,0.5);
+      --contact-text: 224,224,224; --circle-border: rgba(255,255,255,0.07);
+      --hero-grad: linear-gradient(170deg, #1A1A1A 0%, #121212 50%, #141414 100%);
+    }
+    body { font-family: 'Outfit', 'Helvetica Neue', sans-serif; color: var(--text); background: var(--bg); transition: background 0.4s, color 0.4s; overflow-x: hidden; }
+    .serif { font-family: 'Playfair Display', 'Georgia', serif; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; }
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; border-bottom: 1px solid transparent; transition: all 0.35s ease; }
+    .nav.scrolled { background: var(--nav-bg); backdrop-filter: blur(16px); border-bottom-color: var(--border); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 600; color: var(--text); cursor: pointer; }
+    .nav-links { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .nav-link { cursor: pointer; font-size: 13px; font-weight: 400; color: var(--text-muted); transition: color 0.2s; border-bottom: 1.5px solid transparent; padding-bottom: 2px; }
+    .nav-link.active { font-weight: 500; color: var(--accent); border-bottom-color: var(--accent); }
+    .theme-toggle { background: var(--card); border: 1px solid var(--border); border-radius: 999px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); transition: all 0.3s; }
+
+    /* SECTIONS */
+    .section { padding: 100px 24px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: 13px; font-weight: 500; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
+    .section-head { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 500; line-height: 1.2; margin-bottom: 48px; color: var(--text); }
+
+    /* HERO */
+    .hero { min-height: 100vh; display: flex; align-items: center; position: relative; background: var(--hero-grad); }
+    .hero-circle-1 { position: absolute; right: 8%; top: 15%; width: 320px; height: 320px; border-radius: 50%; border: 1px solid var(--circle-border); opacity: 0.5; }
+    .hero-circle-2 { position: absolute; right: 12%; top: 20%; width: 240px; height: 240px; border-radius: 50%; border: 1px solid var(--circle-border); opacity: 0.3; }
+    .hero-line { position: absolute; left: 0; top: 30%; width: 180px; height: 1px; background: var(--border); }
+    .hero-content { max-width: 680px; }
+    .hero-label { font-size: 14px; font-weight: 500; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 24px; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(38px, 5vw, 64px); font-weight: 500; line-height: 1.12; letter-spacing: -0.02em; color: var(--text); margin-bottom: 24px; }
+    .hero-title em { font-style: italic; color: var(--accent-soft); }
+    .hero-desc { font-size: 17px; line-height: 1.75; color: var(--text-muted); max-width: 460px; margin-bottom: 36px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { padding: 13px 28px; border-radius: 999px; background: var(--accent); color: #fff; font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 14px; border: none; transition: transform 0.2s; }
+    [data-theme="dark"] .btn-primary { color: #121212; }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary { padding: 13px 28px; border-radius: 999px; background: transparent; color: var(--text); font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 14px; border: 1.5px solid var(--border); }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px; }
+    .about-text { font-size: 16px; line-height: 1.9; color: var(--text-muted); }
+    .about-text strong { color: var(--text); }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .stat-card { padding: 24px; background: var(--bg-warm); border-radius: 12px; border: 1px solid var(--border); }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; color: var(--accent); line-height: 1; }
+    .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+
+    /* NEWS */
+    .news-row { display: grid; grid-template-columns: 100px 36px 1fr; gap: 12px; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .news-date { font-size: 14px; font-weight: 500; color: var(--accent); }
+    .news-icon { font-size: 20px; text-align: center; }
+    .news-text { font-size: 15px; color: var(--text); line-height: 1.5; }
+
+    /* RESEARCH */
+    .research-item { display: grid; grid-template-columns: 60px 1fr; gap: 28px; padding: 36px 0; border-bottom: 1px solid var(--border); transition: background 0.3s; }
+    .research-item:first-child { border-top: 1px solid var(--border); }
+    .research-item:hover { background: var(--hover-bg); }
+    .research-num { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--accent); font-weight: 500; padding-top: 4px; }
+    .research-title { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 500; color: var(--text); margin-bottom: 10px; }
+    .research-desc { font-size: 15px; line-height: 1.75; color: var(--text-muted); max-width: 560px; }
+
+    /* PEOPLE */
+    .people-heading { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 500; color: var(--accent); margin-bottom: 28px; border-bottom: 2px solid var(--accent); padding-bottom: 10px; display: inline-block; }
+    .prof-card { background: var(--card); border-radius: 20px; border: 1px solid var(--border); overflow: hidden; margin-bottom: 64px; }
+    .prof-top { display: flex; flex-wrap: wrap; }
+    .prof-photo { width: 280px; min-height: 340px; background: var(--photo-grad); display: flex; align-items: center; justify-content: center; font-size: 80px; font-family: 'Playfair Display', serif; color: rgba(255,255,255,0.15); font-weight: 700; flex-shrink: 0; }
+    .prof-info { flex: 1; min-width: 300px; padding: 36px 40px; }
+    .prof-name { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .prof-name span { font-weight: 400; font-size: 22px; color: var(--text-muted); }
+    .prof-role { font-size: 16px; color: var(--accent); font-weight: 500; margin-bottom: 20px; }
+    .prof-contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--text-muted); margin-bottom: 8px; }
+    .prof-contact-item .icon { color: var(--accent); flex-shrink: 0; margin-top: 1px; }
+    .prof-contact-item a { color: var(--text); border-bottom: 1px solid var(--border); }
+    .prof-links { display: flex; gap: 12px; margin-top: 12px; }
+    .prof-link-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 999px; background: var(--bg-warm); border: 1px solid var(--border); font-size: 13px; color: var(--text-muted); transition: all 0.2s; }
+    .prof-link-btn:hover { color: var(--accent); border-color: var(--accent); }
+    .prof-details { padding: 32px 40px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; border-top: 1px solid var(--border); }
+    .prof-detail-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 14px; }
+    .edu-row { display: flex; gap: 12px; margin-bottom: 8px; font-size: 14px; }
+    .edu-period { font-weight: 500; color: var(--accent); flex-shrink: 0; min-width: 32px; }
+    .edu-detail { color: var(--text-muted); }
+    .exp-item { margin-bottom: 10px; font-size: 14px; }
+    .exp-period { font-weight: 500; color: var(--accent); font-size: 12px; }
+    .exp-detail { color: var(--text-muted); margin-top: 2px; line-height: 1.5; }
+    .interest-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .interest-tag { padding: 6px 14px; border-radius: 999px; font-size: 13px; background: var(--accent-pale); color: var(--accent); font-weight: 500; border: 1px solid var(--tag-border); }
+
+    /* STUDENTS */
+    .students-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+    .student-card { background: var(--card); border-radius: 16px; border: 1px solid var(--border); padding: 24px; text-align: center; transition: border-color 0.3s; }
+    .student-card:hover { border-color: var(--accent); }
+    .student-photo { width: 100%; aspect-ratio: 4/5; border-radius: 12px; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; font-size: 42px; font-family: 'Playfair Display', serif; font-weight: 600; }
+    img.student-photo { object-fit: cover; display: block; }
+    [data-theme="light"] .student-photo { color: rgba(0,0,0,0.1); }
+    [data-theme="dark"] .student-photo { color: rgba(255,255,255,0.06); }
+    .student-role-tag { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 500; background: var(--accent-pale); color: var(--accent); margin-bottom: 8px; }
+    .student-name-kr { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+    .student-name-en { font-size: 14px; color: var(--text-muted); margin-bottom: 10px; }
+    .student-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 10px; }
+    .student-tag { padding: 4px 10px; font-size: 11px; border-radius: 999px; background: var(--tag-bg); color: var(--text-muted); border: 1px solid var(--border); }
+    .student-email { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: var(--email-btn-bg); border: 1px solid var(--border); font-size: 12px; color: var(--text-muted); transition: color 0.2s; max-width: 100%; }
+    .student-email:hover { color: var(--accent); }
+    .student-email span { max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    /* PUBLICATIONS */
+    .pub-item { padding: 24px 0; border-bottom: 1px solid var(--border); }
+    .pub-title { font-size: 16px; font-weight: 500; color: var(--text); line-height: 1.45; transition: color 0.2s; }
+    .pub-title:hover { color: var(--accent); }
+    .pub-meta { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+    .pub-journal { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); }
+    .pub-authors { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+    .pub-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .pub-tag { padding: 4px 10px; font-size: 11px; border-radius: 999px; background: var(--tag-bg); color: var(--text-muted); border: 1px solid var(--border); }
+
+    /* APPARATUS */
+    .apparatus-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+    .apparatus-card { background: var(--card); border-radius: 14px; padding: 28px; border: 1px solid var(--border); text-align: center; transition: all 0.3s; }
+    .apparatus-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .apparatus-icon { font-size: 32px; margin-bottom: 14px; color: var(--accent); font-weight: 300; }
+    .apparatus-img { width: 100%; height: 120px; object-fit: contain; margin-bottom: 14px; border-radius: 8px; }
+    .apparatus-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+    .apparatus-desc { font-size: 13px; line-height: 1.6; color: var(--text-muted); }
+
+    /* CONTACT */
+    .contact-section { padding: 100px 24px; background: var(--bg-dark); }
+    .contact-head { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 500; line-height: 1.2; color: rgba(var(--contact-text), 1); margin-bottom: 20px; }
+    .contact-desc { font-size: 16px; color: rgba(var(--contact-text), 0.6); line-height: 1.7; max-width: 500px; margin-bottom: 48px; }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 36px; }
+    .contact-subtitle { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 500; color: var(--accent-soft); margin-bottom: 14px; }
+    .contact-text { font-size: 14px; color: rgba(var(--contact-text), 0.55); line-height: 1.8; }
+    .contact-email { font-size: 16px; color: rgba(var(--contact-text), 0.8); border-bottom: 1px solid rgba(var(--contact-text), 0.2); padding-bottom: 2px; transition: border-color 0.2s; }
+    .contact-email:hover { border-color: var(--accent-soft); }
+    .contact-note { font-size: 13px; color: rgba(var(--contact-text), 0.4); margin-top: 10px; line-height: 1.6; }
+    .contact-link { font-size: 14px; color: rgba(var(--contact-text), 0.55); display: flex; align-items: center; gap: 8px; margin-bottom: 10px; transition: color 0.2s; }
+    .contact-link:hover { color: var(--accent-soft); }
+    .footer { padding: 28px 24px; background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,0.06); text-align: center; }
+    .footer p { font-size: 12px; color: rgba(var(--contact-text), 0.3); }
+
+    /* FADE-IN */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.65s cubic-bezier(.22,1,.36,1), transform 0.65s cubic-bezier(.22,1,.36,1); }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { gap: 12px; }
+      .nav-link { font-size: 11px; }
+      .prof-photo { width: 100%; min-height: 200px; font-size: 50px; }
+      .prof-info { padding: 24px; }
+      .prof-details { padding: 24px; }
+      .prof-name { font-size: 24px; }
+      .prof-name span { font-size: 18px; }
+      .news-row { grid-template-columns: 80px 28px 1fr; gap: 8px; }
+      .hero-circle-1, .hero-circle-2, .hero-line { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <span class="nav-logo" onclick="scrollToSection('home')">
+            <img src="images/inu_logo.png" alt="INU" style="height:30px;vertical-align:middle;margin-right:10px">OEB Laboratory
+          </span>
+      <div class="nav-links">
+        <span class="nav-link" data-section="about" onclick="scrollToSection('about')">About</span>
+        <span class="nav-link" data-section="news" onclick="scrollToSection('news')">News</span>
+        <span class="nav-link" data-section="research" onclick="scrollToSection('research')">Research</span>
+        <span class="nav-link" data-section="people" onclick="scrollToSection('people')">People</span>
+        <span class="nav-link" data-section="publications" onclick="scrollToSection('publications')">Publications</span>
+        <span class="nav-link" data-section="apparatus" onclick="scrollToSection('apparatus')">Apparatus</span>
+        <span class="nav-link" data-section="contact" onclick="scrollToSection('contact')">Contact</span>
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme" id="themeBtn">
+          <svg id="moonIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg id="sunIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="s-home">
+    <div class="hero-circle-1"></div>
+    <div class="hero-circle-2"></div>
+    <div class="hero-line"></div>
+    <div class="section-inner" style="position:relative">
+      <div class="hero-content">
+        <p class="hero-label">Incheon National University · Industrial & Management Engineering</p>
+        <h1 class="hero-title">Occupational<br>Ergonomics &<br><em>Biomechanics</em><br>Laboratory.</h1>
+        <p class="hero-desc">Advancing workplace safety and human well-being through evidence-based ergonomic and biomechanical research.</p>
+        <div class="hero-btns">
+          <button class="btn-primary" onclick="scrollToSection('research')">Our Research →</button>
+          <button class="btn-secondary" onclick="scrollToSection('people')">Meet the Team</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section class="section" id="s-about">
+    <div class="section-inner">
+      <div class="fade-in"><p class="section-label">About</p><h2 class="section-head">직업환경 인간공학 및 생체역학<br>연구실에 오신 것을 환영합니다</h2></div>
+      <div style="max-width:720px">
+        <div class="fade-in">
+          <p class="about-text" style="margin-bottom:20px">인천대학교 산업경영공학과 <strong>OEB 연구실</strong>은 <strong>인간공학(Ergonomics)</strong>과 <strong>생체역학(Biomechanics)</strong>을 기반으로 작업 환경에서의 인체 부담을 분석하고, 근골격계 질환을 예방하기 위한 연구를 수행합니다.</p>
+          <p class="about-text" style="margin-bottom:20px">우리 연구실은 <strong>근전도(EMG) 측정, 동작 분석, 인체 역학 모델링</strong> 등의 기법을 활용하여 작업자의 신체적 부하를 정량적으로 평가하고, 보다 안전하고 효율적인 작업 환경을 설계하는 것을 목표로 합니다.</p>
+          <p class="about-text">또한 <strong>인간 중심 제품 설계 및 평가</strong> 연구를 통해 사용자의 신체적 특성과 행동 패턴을 반영한 제품·서비스 개발을 지원하고 있습니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ NEWS ═══ -->
+  <section class="section" id="s-news" style="background:var(--bg-warm)">
+    <div class="section-inner">
+      <div class="fade-in"><p class="section-label">News & Awards</p><h2 class="section-head">Latest Updates</h2></div>
+      <div class="fade-in"><div class="news-row"><span class="news-date">2025.03</span><span class="news-icon">🏆</span><span class="news-text">OEB Lab officially launched at Incheon National University</span></div></div>
+      <div class="fade-in"><div class="news-row"><span class="news-date">2025.02</span><span class="news-icon">📄</span><span class="news-text">New paper published in Applied Ergonomics</span></div></div>
+      <div class="fade-in"><div class="news-row"><span class="news-date">2025.01</span><span class="news-icon">👋</span><span class="news-text">3 undergraduate researchers joined the lab</span></div></div>
+      <div class="fade-in"><div class="news-row"><span class="news-date">2024.09</span><span class="news-icon">🎓</span><span class="news-text">Prof. Seobin Choi appointed as Assistant Professor at INU</span></div></div>
+      <div class="fade-in"><p style="margin-top:24px;font-size:13px;color:var(--text-muted);font-style:italic">수상내역이 있으면 여기에 추가하시면 됩니다.</p></div>
+    </div>
+  </section>
+
+  <!-- ═══ RESEARCH ═══ -->
+  <section class="section" id="s-research">
+    <div class="section-inner">
+      <div class="fade-in"><p class="section-label">Research</p><h2 class="section-head">Research Areas</h2></div>
+      <div class="fade-in"><div class="research-item"><span class="research-num">01</span><div><h3 class="research-title">Ergonomics</h3><p class="research-desc">We focus on optimizing interactions between people and their environment to improve efficiency, safety, and well-being.</p></div></div></div>
+      <div class="fade-in"><div class="research-item"><span class="research-num">02</span><div><h3 class="research-title">Biomechanics</h3><p class="research-desc">The application of biological and medical principles to solve health-related problems, including human biology, disease mechanisms, and development of medical devices and diagnostics.</p></div></div></div>
+      <div class="fade-in"><div class="research-item"><span class="research-num">03</span><div><h3 class="research-title">Occupational Health & Safety</h3><p class="research-desc">We focus on protecting employee well-being in the workplace through practices, regulations, and strategies to prevent injuries, illnesses, and fatalities.</p></div></div></div>
+      <div class="fade-in"><div class="research-item"><span class="research-num">04</span><div><h3 class="research-title">Human-Centered Product Design & Evaluation</h3><p class="research-desc">We create user-friendly products and services by prioritizing user needs, behaviors, and preferences throughout the design and development process.</p></div></div></div>
+    </div>
+  </section>
+
+  <!-- ═══ PEOPLE ═══ -->
+  <section class="section" id="s-people" style="background:var(--bg-warm)">
+    <div class="section-inner">
+      <div class="fade-in"><p class="section-label">People</p><h2 class="section-head">Our Team</h2></div>
+
+      <!-- Professor -->
+      <div class="fade-in">
+        <h3 class="people-heading">Professor</h3>
+        <div class="prof-card">
+          <div class="prof-top">
+            <!-- 사진: src="images/prof.jpeg" 로 교체 -->
+            <div class="prof-photo">S</div>
+            <div class="prof-info">
+              <h3 class="prof-name">최서빈 <span>Seobin Choi</span></h3>
+              <p class="prof-role">Assistant Professor, Ph.D.</p>
+              <div>
+                <div class="prof-contact-item"><span class="icon">✉️</span><a href="/cdn-cgi/l/email-protection#285b43514441464d5e4d5a514c49516841465d06494b06435a"><span class="__cf_email__" data-cfemail="ea9981938683848f9c8f98938e8b93aa83849fc48b89c48198">[email&#160;protected]</span></a></div>
+                <div class="prof-contact-item"><span class="icon">🏛️</span><span>Department of Industrial and Management Engineering, Incheon National University, South Korea</span></div>
+              </div>
+              <div class="prof-links">
+                <a href="https://scholar.google.com/citations?user=PcCmQdcAAAAJ&hl=en" target="_blank" class="prof-link-btn">
+                  <img src="images/googlescholar_logo.png" alt="Scholar" style="width:16px;height:16px">
+                  Google Scholar
+                </a>
+                <a href="https://www.linkedin.com/in/seobinchoi/?locale=ko_KR" target="_blank" class="prof-link-btn">
+                  <img src="images/linkedIn_logo.png" alt="LinkedIn" style="width:16px;height:16px;border-radius:3px">
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="prof-details">
+            <div>
+              <h4 class="prof-detail-title">Education</h4>
+              <div class="edu-row"><span class="edu-period">PhD</span><span class="edu-detail">Biomedical Engineering, UNIST</span></div>
+              <div class="edu-row"><span class="edu-period">BS</span><span class="edu-detail">Biomedical Engineering, UNIST</span></div>
+            </div>
+            <div>
+              <h4 class="prof-detail-title">Work Experience</h4>
+              <div class="exp-item"><span class="exp-period">2025.03. ~ Present</span><p class="exp-detail">Assistant Professor, Dept. of Industrial and Management Engineering, Incheon National University</p></div>
+              <div class="exp-item"><span class="exp-period">2024.08. ~ 2025.02.</span><p class="exp-detail">Postdoctoral Researcher, Texas A&M University</p></div>
+              <div class="exp-item"><span class="exp-period">2024.01. ~ 2024.07.</span><p class="exp-detail">Postdoctoral Researcher, Oregon State University</p></div>
+              <div class="exp-item"><span class="exp-period">2023.06. ~ 2023.08.</span><p class="exp-detail">Research Associate, KIST AI Research Group</p></div>
+            </div>
+            <div>
+              <h4 class="prof-detail-title">Research Interest</h4>
+              <div class="interest-tags">
+                <span class="interest-tag">Occupational Ergonomics</span>
+                <span class="interest-tag">Biomechanics</span>
+                <span class="interest-tag">Occupational Health & Safety</span>
+                <span class="interest-tag">Human-Centered Product Design & Evaluation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Students -->
+      <div class="fade-in"><h3 class="people-heading">Students</h3></div>
+      <div class="students-grid">
+        <!-- 문시아 -->
+        <div class="fade-in"><div class="student-card">
+          <!-- 사진: siamoon.jpg -->
+          <img src="images/siamoon.jpg" alt="문시아" class="student-photo" style="object-fit:cover">
+          <span class="student-role-tag">BS</span>
+          <h4 class="student-name-kr">문시아</h4>
+          <p class="student-name-en">Sia Moon</p>
+          <div class="student-tags">
+            <span class="student-tag">UserInterface</span>
+            <span class="student-tag">UserExperience</span>
+            <span class="student-tag">HCI</span>
+            <span class="student-tag">Data Analysis</span>
+          </div>
+          <a href="/cdn-cgi/l/email-protection#54273f2d383d3a312231262d30352d143d3a217a35377a3f26" class="student-email">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <span><span class="__cf_email__" data-cfemail="0f7c64766366616a796a7d766b6e764f66617a216e6c21647d">[email&#160;protected]</span></span>
+          </a>
+        </div></div>
+
+        <!-- 김승환 -->
+        <div class="fade-in"><div class="student-card">
+          <div class="student-photo" style="background:#E8DDD4" data-dark-bg="#3A3228">S</div>
+          <span class="student-role-tag">BS</span>
+          <h4 class="student-name-kr">김승환</h4>
+          <p class="student-name-en">Seunghwan Kim</p>
+          <a href="/cdn-cgi/l/email-protection#ddaab4beaeb59db4b3a8f3bcbef3b6af" class="student-email">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <span><span class="__cf_email__" data-cfemail="bfc8d6dcccd7ffd6d1ca91dedc91d4cd">[email&#160;protected]</span></span>
+          </a>
+        </div></div>
+
+        <!-- 윤종규 -->
+        <div class="fade-in"><div class="student-card">
+          <img src="images/JonggyuYun.jpg" alt="윤종규" class="student-photo" style="object-fit:cover">
+          <span class="student-role-tag">BS</span>
+          <h4 class="student-name-kr">윤종규</h4>
+          <p class="student-name-en">Jonggyu Yun</p>
+          <a href="/cdn-cgi/l/email-protection#0b6d673b386e794b62657e256a68256079" class="student-email">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <span><span class="__cf_email__" data-cfemail="7d1b114d4e180f3d141308531c1e53160f">[email&#160;protected]</span></span>
+          </a>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PUBLICATIONS ═══ -->
+  <section class="section" id="s-publications">
+    <div class="section-inner">
+      <div class="fade-in"><p class="section-label">Publications</p><h2 class="section-head">Selected Publications</h2></div>
+
+      <div class="fade-in"><div class="pub-item">
+        <a href="https://doi.org/10.1016/j.apergo.2025.104537" target="_blank" class="pub-title">Effects of different sorting table heights on low back and shoulders biomechanical loads during dungeness crab sorting ↗</a>
+        <p class="pub-meta"><span class="pub-journal">Applied Ergonomics 128, 104537</span></p>
+        <p class="pub-authors">Salehi, M., Choi, S., Kia, K., Chan, A., Kincl, L., Kim, J.</p>
+        <div class="pub-tags"><span class="pub-tag">Sorting</span><span class="pub-tag">Low back</span><span class="pub-tag">Shoulder</span><span class="pub-tag">Crab industry</span></div>
+      </div></div>
+
+      <div class="fade-in"><div class="pub-item">
+        <a href="https://doi.org/10.1080/00140139.2023.2300954" target="_blank" class="pub-title">How to walk to reduce footstep noise in multi-story residential buildings ↗</a>
+        <p class="pub-meta"><span class="pub-journal">Ergonomics 68(1), 112-119</span></p>
+        <p class="pub-authors">Yoon, W., Kwon, Y., Yoon, J., Choi, S., Shin, G.</p>
+        <div class="pub-tags"><span class="pub-tag">Walking</span><span class="pub-tag">Noise</span><span class="pub-tag">Residential buildings</span></div>
+      </div></div>
+
+      <div class="fade-in"><div class="pub-item">
+        <a href="https://doi.org/10.1016/j.knee.2021.04.018" target="_blank" class="pub-title">Effect of medial foot loading self-practice on lower limb kinematics in young individuals with asymptomatic varus knee alignment ↗</a>
+        <p class="pub-meta"><span class="pub-journal">The Knee 30, 305-313</span></p>
+        <p class="pub-authors">Choi, S., Shin, G.</p>
+        <div class="pub-tags"><span class="pub-tag">Knee</span><span class="pub-tag">Lower limb</span><span class="pub-tag">Foot loading</span></div>
+      </div></div>
+
+      <div class="fade-in"><div class="pub-item">
+        <a href="https://doi.org/10.1097/BRS.0000000000003808" target="_blank" class="pub-title">Changes in low back muscle activity and spine kinematics in response to smartphone use during walking ↗</a>
+        <p class="pub-meta"><span class="pub-journal">Spine 46(7), E426-E432</span></p>
+        <p class="pub-authors">Choi, S., Kim, M., Kim, E., Shin, G.</p>
+        <div class="pub-tags"><span class="pub-tag">Smartphone</span><span class="pub-tag">Walking</span><span class="pub-tag">Low back</span><span class="pub-tag">Spine</span></div>
+      </div></div>
+
+      <div class="fade-in"><div class="pub-item">
+        <a href="https://doi.org/10.1016/j.aap.2020.105909" target="_blank" class="pub-title">Performance of ground-level signal detection when using a phone while walking ↗</a>
+        <p class="pub-meta"><span class="pub-journal">Accident Analysis and Prevention 151, 105909</span></p>
+        <p class="pub-authors">Kim, E., Kim, H., Kwon, Y., Choi, S., Shin, G.</p>
+        <div class="pub-tags"><span class="pub-tag">Perception</span><span class="pub-tag">Walking</span><span class="pub-tag">Phone use</span><span class="pub-tag">Safety</span></div>
+      </div></div>
+
+      <div class="fade-in"><div class="pub-item">
+        <a href="https://doi.org/10.1177/0018720820904237" target="_blank" class="pub-title">Neck muscular load when using a smartphone in sitting, standing and while walking ↗</a>
+        <p class="pub-meta"><span class="pub-journal">Human Factors 63(5), 868-879</span></p>
+        <p class="pub-authors">Yoon, W., Choi, S., Han, H., Shin, G.</p>
+        <div class="pub-tags"><span class="pub-tag">Neck</span><span class="pub-tag">Smartphone</span><span class="pub-tag">Posture</span><span class="pub-tag">Walking</span></div>
+      </div></div>
+
+      <div class="fade-in"><div class="pub-item">
+        <a href="https://doi.org/10.1016/j.apergo.2018.02.001" target="_blank" class="pub-title">Effects of the center of mass of a stick vacuum cleaner on the muscle activities of the upper extremity during floor vacuuming ↗</a>
+        <p class="pub-meta"><span class="pub-journal">Applied Ergonomics 70, 1-5</span></p>
+        <p class="pub-authors">Choi, S., Shin, G.</p>
+        <div class="pub-tags"><span class="pub-tag">Ergonomics</span><span class="pub-tag">Vacuuming</span><span class="pub-tag">Upper extremity</span><span class="pub-tag">Shoulder</span></div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- ═══ APPARATUS ═══ -->
+  <section class="section" id="s-apparatus" style="background:var(--bg-warm)">
+    <div class="section-inner">
+      <div class="fade-in"><p class="section-label">Apparatus</p><h2 class="section-head">Lab Equipment</h2></div>
+      <div class="apparatus-grid">
+        <div class="fade-in"><div class="apparatus-card"><img src="images/delsys-trigno.png" alt="Delsys Trigno EMG" class="apparatus-img"><h4 class="apparatus-name">Delsys Trigno EMG</h4><p class="apparatus-desc">무선 근전도(EMG) 측정 모듈</p></div></div>
+        <div class="fade-in"><div class="apparatus-card"><img src="images/gopro.png" alt="GoPro Hero 12" class="apparatus-img"><h4 class="apparatus-name">GoPro Hero 12</h4><p class="apparatus-desc">액션 카메라 · 슬로모션/광각 촬영</p></div></div>
+        <div class="fade-in"><div class="apparatus-card"><img src="images/djiaction2.png" alt="DJI Action 2" class="apparatus-img"><h4 class="apparatus-name">DJI Action 2</h4><p class="apparatus-desc">웨어러블 액션 카메라 · 자석 마운트</p></div></div>
+        <div class="fade-in"><div class="apparatus-card"><img src="images/iphone12pro1.png" alt="iPhone 12 Pro" class="apparatus-img"><h4 class="apparatus-name">iPhone 12 Pro</h4><p class="apparatus-desc">고속 프레임 영상 · OpenCap 데이터 수집</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="contact-section" id="s-contact">
+    <div class="section-inner">
+      <div class="fade-in">
+        <p class="section-label" style="color:var(--accent-soft)">Contact</p>
+        <h2 class="contact-head">Get in Touch</h2>
+        <p class="contact-desc">궁금한 사항이 있다면 언제든지 아래의 메일로 연락바랍니다.<br>Feel free to reach out if you have any questions.</p>
+      </div>
+      <div class="fade-in">
+        <div class="contact-grid">
+          <div>
+            <h4 class="contact-subtitle">Location</h4>
+            <p class="contact-text">Incheon National University<br>Dept. of Industrial &<br>Management Engineering<br>Incheon, South Korea</p>
+          </div>
+          <div>
+            <h4 class="contact-subtitle">Email</h4>
+            <a href="/cdn-cgi/l/email-protection#4c3f2735202522293a293e35282d350c252239622d2f62273e" class="contact-email"><span class="__cf_email__" data-cfemail="acdfc7d5c0c5c2c9dac9ded5c8cdd5ecc5c2d982cdcf82c7de">[email&#160;protected]</span></a>
+            <p class="contact-note">Open to collaboration &<br>prospective students</p>
+          </div>
+          <div>
+            <h4 class="contact-subtitle">Links</h4>
+            <a href="https://scholar.google.com/citations?user=PcCmQdcAAAAJ&hl=en" target="_blank" class="contact-link">
+              <img src="images/googlescholar_logo.png" alt="Scholar" style="width:16px;height:16px">
+              Google Scholar
+            </a>
+            <a href="https://www.linkedin.com/in/seobinchoi/?locale=ko_KR" target="_blank" class="contact-link">
+              <img src="images/linkedIn_logo.png" alt="LinkedIn" style="width:16px;height:16px;border-radius:3px">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <p>© 2025 Occupational Ergonomics & Biomechanics Laboratory, Incheon National University</p>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // ─── Theme Toggle ───
+    function toggleTheme() {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      document.getElementById('moonIcon').style.display = isDark ? '' : 'none';
+      document.getElementById('sunIcon').style.display = isDark ? 'none' : '';
+      // Update student photo backgrounds
+      document.querySelectorAll('.student-photo').forEach(el => {
+        if (isDark) {
+          el.style.background = el.getAttribute('data-light-bg') || el.style.background;
+        } else {
+          if (!el.getAttribute('data-light-bg')) el.setAttribute('data-light-bg', el.style.background);
+          el.style.background = el.getAttribute('data-dark-bg') || el.style.background;
+        }
+      });
+    }
+
+    // ─── Scroll: Nav highlight + sticky ───
+    const sections = ['home','about','news','research','people','publications','apparatus','contact'];
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('mainNav');
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+
+      let current = 'home';
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = docu
