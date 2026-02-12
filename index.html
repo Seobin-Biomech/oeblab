@@ -189,12 +189,13 @@
   <nav class="nav" id="mainNav">
     <div class="nav-inner">
       <span class="nav-logo" onclick="scrollToSection('home')">
-        <img src="images/inulogo.png" alt="INU" style="height:30px;vertical-align:middle;margin-right:10px">OEB Laboratory
+        <img src="images/inu-logo.png" alt="INU" style="height:30px;vertical-align:middle;margin-right:10px">OEB Laboratory
       </span>
       <div class="nav-links">
         <span class="nav-link" data-section="about" onclick="scrollToSection('about')">About</span>
         <span class="nav-link" data-section="news" onclick="scrollToSection('news')">News</span>
         <span class="nav-link" data-section="research" onclick="scrollToSection('research')">Research</span>
+        <span class="nav-link" data-section="teaching" onclick="scrollToSection('teaching')">Teaching</span>
         <span class="nav-link" data-section="people" onclick="scrollToSection('people')">People</span>
         <span class="nav-link" data-section="publications" onclick="scrollToSection('publications')">Publications</span>
         <span class="nav-link" data-section="apparatus" onclick="scrollToSection('apparatus')">Apparatus</span>
@@ -220,6 +221,10 @@
         <div class="hero-btns">
           <button class="btn-primary" onclick="scrollToSection('research')">Our Research →</button>
           <button class="btn-secondary" onclick="scrollToSection('people')">Meet the Team</button>
+          <div style="margin-top:32px;padding:14px 24px;background:var(--accent-pale);border:1px solid var(--tag-border);border-radius:12px;display:inline-block">
+          <span style="font-size:14px;color:var(--accent);font-weight:500">🔔 학부연구생 모집중! · Now Recruiting Undergraduate Researchers</span>
+          <span style="font-size:13px;color:var(--text-muted);margin-left:8px;cursor:pointer" onclick="scrollToSection('contact')">→ Contact</span>
+        </div>
         </div>
       </div>
     </div>
@@ -233,7 +238,7 @@
         <div class="fade-in">
           <p class="about-text" style="margin-bottom:20px">인천대학교 산업경영공학과 <strong>OEB 연구실</strong>은 <strong>인간공학(Ergonomics)</strong>과 <strong>생체역학(Biomechanics)</strong>을 기반으로 작업 환경에서의 인체 부담을 분석하고, 근골격계 질환을 예방하기 위한 연구를 수행합니다.</p>
           <p class="about-text" style="margin-bottom:20px">우리 연구실은 <strong>근전도(EMG) 측정, 동작 분석, 인체 역학 모델링</strong> 등의 기법을 활용하여 작업자의 신체적 부하를 정량적으로 평가하고, 보다 안전하고 효율적인 작업 환경을 설계하는 것을 목표로 합니다.</p>
-          <p class="about-text">또한 <strong>인간 중심 제품 설계 및 평가</strong> 연구를 통해 사용자의 신체적 특성과 행동 패턴을 반영한 제품·서비스 개발을 지원하고 있습니다.</p>
+          <p class="about-text">또한 사용자의 신체적 특성과 행동 패턴을 반영한 <strong>인간 중심 제품 설계 및 평가</strong> 연구를 진행하고 있습니다.</p>
         </div>
       </div>
     </div>
@@ -259,7 +264,50 @@
       <div class="fade-in"><div class="research-item"><span class="research-num">04</span><div><h3 class="research-title">Human-Centered Product Design & Evaluation</h3><p class="research-desc">We create user-friendly products and services by prioritizing user needs, behaviors, and preferences throughout the design and development process.</p></div></div></div>
     </div>
   </section>
-
+  
+<!-- TEACHING -->
+  <section class="section" id="s-teaching" style="background:var(--bg-warm)">
+    <div class="section-inner">
+      <div class="fade-in"><p class="section-label">Teaching</p><h2 class="section-head">Courses</h2></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:36px">
+        <div class="fade-in">
+          <h4 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--text);margin-bottom:20px">2025 Fall Semester</h4>
+          <div style="margin-bottom:16px">
+            <p style="font-size:12px;font-weight:500;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px">Undergraduate</p>
+            <div style="padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:8px">
+              <span style="font-size:13px;color:var(--accent);font-weight:500">2-2</span>
+              <span style="font-size:15px;color:var(--text);margin-left:10px">UX/UI Design</span>
+            </div>
+            <div style="padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+              <span style="font-size:13px;color:var(--accent);font-weight:500">3-2</span>
+              <span style="font-size:15px;color:var(--text);margin-left:10px">Ergonomics of Product Design</span>
+            </div>
+          </div>
+        </div>
+        <div class="fade-in">
+          <h4 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--text);margin-bottom:20px">2025 Spring Semester</h4>
+          <div style="margin-bottom:16px">
+            <p style="font-size:12px;font-weight:500;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px">Undergraduate</p>
+            <div style="padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:8px">
+              <span style="font-size:13px;color:var(--accent);font-weight:500">2-1</span>
+              <span style="font-size:15px;color:var(--text);margin-left:10px">Human Factors/Ergonomics</span>
+            </div>
+            <div style="padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+              <span style="font-size:13px;color:var(--accent);font-weight:500">3-1</span>
+              <span style="font-size:15px;color:var(--text);margin-left:10px">Ergonomics Lab and Evaluation</span>
+            </div>
+          </div>
+          <div>
+            <p style="font-size:12px;font-weight:500;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px">Graduate</p>
+            <div style="padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+              <span style="font-size:15px;color:var(--text)">Advanced Human Factors</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <!-- PEOPLE -->
   <section class="section" id="s-people" style="background:var(--bg-warm)">
     <div class="section-inner">
@@ -270,21 +318,22 @@
         <h3 class="people-heading">Professor</h3>
         <div class="prof-card">
           <div class="prof-top">
-            <div class="prof-photo">S</div>
+            <img src="images/prof.jpeg" alt="최서빈" class="prof-photo" style="object-fit:cover">
             <div class="prof-info">
               <h3 class="prof-name">최서빈 <span>Seobin Choi</span></h3>
               <p class="prof-role">Assistant Professor, Ph.D.</p>
               <div>
                 <div class="prof-contact-item"><span class="icon">✉️</span><a href="mailto:seobin.choi&#64;inu.ac.kr">seobin.choi&#64;inu.ac.kr</a></div>
                 <div class="prof-contact-item"><span class="icon">🏛️</span><span>Department of Industrial and Management Engineering, Incheon National University, South Korea</span></div>
+                <div class="prof-contact-item"><span class="icon">📍</span><span>Office: 8호관 A동 465호 · Lab: 8호관 A동 407호</span></div>
               </div>
               <div class="prof-links">
                 <a href="https://scholar.google.com/citations?user=PcCmQdcAAAAJ&hl=en" target="_blank" class="prof-link-btn">
-                  <img src="images/googlescholar_logo.png" alt="Scholar" style="width:16px;height:16px">
+                  <img src="images/googlescholar.logo.png" alt="Scholar" style="width:16px;height:16px">
                   Google Scholar
                 </a>
                 <a href="https://www.linkedin.com/in/seobinchoi/?locale=ko_KR" target="_blank" class="prof-link-btn">
-                  <img src="images/linkedIn_logo.png" alt="LinkedIn" style="width:16px;height:16px;border-radius:3px">
+                  <img src="images/linkedIn.logo.png" alt="LinkedIn" style="width:16px;height:16px;border-radius:3px">
                   LinkedIn
                 </a>
               </div>
@@ -460,7 +509,7 @@
         <div class="contact-grid">
           <div>
             <h4 class="contact-subtitle">Location</h4>
-            <p class="contact-text">Incheon National University<br>Dept. of Industrial &<br>Management Engineering<br>Incheon, South Korea</p>
+            <p class="contact-text">Incheon National University<br>Dept. of Industrial &<br>Management Engineering<br><br><br><strong style="color:rgba(var(--contact-text),0.7)">Office</strong> 8호관 A동 465호<br><strong style="color:rgba(var(--contact-text),0.7)">Lab</strong> 8호관 A동 407호</p>
           </div>
           <div>
             <h4 class="contact-subtitle">Email</h4>
@@ -498,7 +547,7 @@
     }
 
     // Scroll: Nav highlight + sticky
-    var sectionIds = ['home','about','news','research','people','publications','apparatus','contact'];
+    var sectionIds = ['home','about','news','research','teaching','people','publications','apparatus','contact'];
     window.addEventListener('scroll', function() {
       var nav = document.getElementById('mainNav');
       if (window.scrollY > 50) { nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
