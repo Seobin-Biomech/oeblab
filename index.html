@@ -154,8 +154,10 @@
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.65s cubic-bezier(.22,1,.36,1), transform 0.65s cubic-bezier(.22,1,.36,1); }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
     @media (max-width: 768px) {
-      .nav-links { gap: 12px; }
-      .nav-link { font-size: 11px; }
+      .hamburger { display: flex !important; }
+      .nav-links { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--nav-bg); backdrop-filter: blur(16px); flex-direction: column; padding: 20px 24px; gap: 16px; border-bottom: 1px solid var(--border); z-index: 99; }
+      .nav-links.open { display: flex; }
+      .nav-link { font-size: 15px; }
       .prof-photo { width: 100%; min-height: 200px; font-size: 50px; }
       .prof-info { padding: 24px; }
       .prof-details { padding: 24px; }
@@ -173,6 +175,7 @@
       <span class="nav-logo" onclick="scrollToSection('home')">
         <img src="images/inu-logo.png" alt="INU" style="height:30px;vertical-align:middle;margin-right:10px">OEB Lab
       </span>
+      <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" style="display:none;background:none;border:none;font-size:24px;color:var(--text);cursor:pointer;padding:8px">☰</button>
       <div class="nav-links">
         <span class="nav-link" data-section="about" onclick="scrollToSection('about')">About</span>
         <span class="nav-link" data-section="news" onclick="scrollToSection('news')">News</span>
@@ -416,7 +419,7 @@
       <div class="fade-in"><p class="section-label">Teaching</p><h2 class="section-head">Courses</h2></div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:36px">
         <div class="fade-in">
-          <h4 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--text);margin-bottom:20px">2025 Fall Semester</h4>
+          <h4 style="font-family:'Source Serif 4',serif;font-size:20px;font-weight:500;color:var(--text);margin-bottom:20px">2025 Fall Semester</h4>
           <div style="margin-bottom:16px">
             <p style="font-size:12px;font-weight:500;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px">Undergraduate</p>
             <div style="padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:8px">
@@ -430,7 +433,7 @@
           </div>
         </div>
         <div class="fade-in">
-          <h4 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--text);margin-bottom:20px">2025 Spring Semester</h4>
+          <h4 style="font-family:'Source Serif 4',serif;font-size:20px;font-weight:500;color:var(--text);margin-bottom:20px">2025 Spring Semester</h4>
           <div style="margin-bottom:16px">
             <p style="font-size:12px;font-weight:500;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px">Undergraduate</p>
             <div style="padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:8px">
