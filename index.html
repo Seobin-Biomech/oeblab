@@ -17,23 +17,25 @@
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --bg: #FFFFFF; --bg-warm: #F8F7F5; --bg-dark: #2C3530;
-      --accent: #5F7161; --accent-soft: #748E76; --accent-pale: #E8EDE9;
-      --text: #333333; --text-muted: #767676; --border: #E0DDD7; --card: #FFFFFF;
-      --nav-bg: rgba(250,249,246,0.92);
-      --photo-grad: linear-gradient(135deg, #A5B8A0, #8CA387);
-      --tag-bg: #F5F5F4; --tag-border: rgba(95,113,97,0.15);
-      --email-btn-bg: #FAFAF9; --hover-bg: rgba(242,240,235,0.5);
-      --contact-text: 250,249,246; --circle-border: #E0DDD7;
-      --hero-grad: linear-gradient(170deg, #FFFFFF 0%, #FFFFFF 50%, #F8F7F5 100%);
+      --bg: #FFFFFF; --bg-warm: #F5F6F8; --bg-dark: #2D3142;
+      --accent: #1B5299; --accent-soft: #4A7CC9; --accent-pale: #E8EFF8;
+      --accent-pop: #F0A500;
+      --text: #2D3142; --text-muted: #5A6068; --border: #E2E4E8; --card: #FFFFFF;
+      --nav-bg: rgba(255,255,255,0.92);
+      --photo-grad: linear-gradient(135deg, #1B5299, #4A7CC9);
+      --tag-bg: #F5F6F8; --tag-border: rgba(27,82,153,0.12);
+      --email-btn-bg: #FAFBFC; --hover-bg: rgba(245,246,248,0.5);
+      --contact-text: 245,246,248; --circle-border: #E2E4E8;
+      --hero-grad: linear-gradient(170deg, #FFFFFF 0%, #FFFFFF 50%, #FFFFFF 100%);
     }
     [data-theme="dark"] {
       --bg: #121212; --bg-warm: #1A1A1A; --bg-dark: #0A0A0A;
-      --accent: #8AB094; --accent-soft: #9DC3A8; --accent-pale: rgba(138,176,148,0.12);
+      --accent: #5B9BD5; --accent-soft: #7AAFCB; --accent-pale: rgba(91,155,213,0.12);
+      --accent-pop: #F0A500;
       --text: #E0E0E0; --text-muted: #A0A0A0; --border: rgba(255,255,255,0.07); --card: #1E1E1E;
       --nav-bg: rgba(18,18,18,0.92);
-      --photo-grad: linear-gradient(135deg, #6B9E78, #5A8668);
-      --tag-bg: rgba(255,255,255,0.04); --tag-border: rgba(138,176,148,0.2);
+      --photo-grad: linear-gradient(135deg, #1B5299, #3D6478);
+      --tag-bg: rgba(255,255,255,0.04); --tag-border: rgba(91,155,213,0.2);
       --email-btn-bg: rgba(255,255,255,0.04); --hover-bg: rgba(30,30,30,0.5);
       --contact-text: 224,224,224; --circle-border: rgba(255,255,255,0.07);
       --hero-grad: linear-gradient(170deg, #1A1A1A 0%, #121212 50%, #141414 100%);
@@ -81,7 +83,7 @@
     .research-item { display: grid; grid-template-columns: 60px 1fr; gap: 28px; padding: 36px 0; border-bottom: 1px solid var(--border); transition: background 0.3s; }
     .research-item:first-child { border-top: 1px solid var(--border); }
     .research-item:hover { background: var(--hover-bg); }
-    .research-num { font-family: 'Source Serif 4', serif; font-size: 14px; color: var(--accent); font-weight: 500; padding-top: 4px; }
+    .research-num { font-family: 'Source Serif 4', serif; font-size: 14px; color: var(--accent-pop); font-weight: 600; padding-top: 4px; }
     .research-title { font-family: 'Source Serif 4', serif; font-size: 24px; font-weight: 500; color: var(--text); margin-bottom: 10px; }
     .research-desc { font-size: 15px; line-height: 1.75; color: var(--text-muted); max-width: 560px; }
     .people-heading { font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 500; color: var(--accent); margin-bottom: 28px; border-bottom: 2px solid var(--accent); padding-bottom: 10px; display: inline-block; }
@@ -142,7 +144,7 @@
     .contact-head { font-family: 'Source Serif 4', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 500; line-height: 1.2; color: rgba(var(--contact-text), 1); margin-bottom: 20px; }
     .contact-desc { font-size: 16px; color: rgba(var(--contact-text), 0.6); line-height: 1.7; max-width: 500px; margin-bottom: 48px; }
     .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 36px; }
-    .contact-subtitle { font-family: 'Source Serif 4', serif; font-size: 20px; font-weight: 500; color: var(--accent-soft); margin-bottom: 14px; }
+    .contact-subtitle { font-family: 'Source Serif 4', serif; font-size: 20px; font-weight: 500; color: var(--accent-pop); margin-bottom: 14px; }
     .contact-text { font-size: 14px; color: rgba(var(--contact-text), 0.55); line-height: 1.8; }
     .contact-email { font-size: 16px; color: rgba(var(--contact-text), 0.8); border-bottom: 1px solid rgba(var(--contact-text), 0.2); padding-bottom: 2px; transition: border-color 0.2s; }
     .contact-email:hover { border-color: var(--accent-soft); }
