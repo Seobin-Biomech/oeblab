@@ -183,7 +183,7 @@
     .exp-detail { color: var(--text-muted); margin-top: 2px; line-height: 1.5; }
     .interest-tags { display: flex; flex-wrap: wrap; gap: 8px; }
     .interest-tag { padding: 6px 14px; border-radius: 999px; font-size: 13px; background: var(--accent-pale); color: var(--accent); font-weight: 500; border: 1px solid var(--tag-border); }
-    .researcher-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(440px, 1fr)); gap: 24px; }
+    .researcher-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(440px, 100%), 1fr)); gap: 24px; }
     .researcher-card { display: grid; grid-template-columns: 140px 1fr; gap: 20px; background: var(--card); border-radius: 16px; border: 1px solid var(--border); padding: 20px; transition: border-color 0.3s, transform 0.2s, box-shadow 0.2s; }
     .researcher-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
     .researcher-photo { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 12px; display: block; }
@@ -209,6 +209,13 @@
     .pub-authors { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
     .pub-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
     .pub-tag { padding: 4px 10px; font-size: 11px; border-radius: 999px; background: var(--tag-bg); color: var(--text-muted); border: 1px solid var(--border); }
+    .project-group { margin-bottom: 48px; }
+    .project-group-head { font-family: 'Source Serif 4', serif; font-size: 20px; font-weight: 500; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 8px; margin-bottom: 4px; display: inline-block; }
+    .project-group-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+    .project-affil { font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 28px; }
+    .project-title-ko { font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-top: 4px; }
+    .project-role-line { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+    .project-role-text { font-weight: 600; color: var(--accent); }
     .teaching-years { display: flex; flex-direction: column; gap: 56px; }
     .teaching-year-label { font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; color: var(--accent); margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--accent); display: inline-block; padding-right: 24px; }
     .teaching-semester-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; }
@@ -314,11 +321,12 @@
               <button class="btn-secondary" onclick="scrollToSection('people')">Meet the Team</button>
             </div>
             <div class="recruit-banner">
-              <p class="recruit-title">학부연구생 모집중! · Now Recruiting</p>
+              <p class="recruit-title">학부연구생 · 대학원생 모집중! · Now Recruiting</p>
               <p class="recruit-detail">
-                <strong>모집 대상: 학부생 2-4학년, 인간공학 관련 과목을 수강한 학생</strong> <br>
-                (인간공학, 인간공학적 실험평가론, 인간공학적 설계, UX/UI 디자인 등)<br>
-                <strong>지원방법: seobin.choi&#64;inu.ac.kr 로 이메일!</strong>
+                <strong>학부연구생: 대학원 진학에 관심 있는 학부 3-4학년</strong><br>
+                (인간공학, 인간공학적 실험평가론, 인간공학적 설계, UX/UI 디자인 등 관련 과목 수강자)<br>
+                <strong>대학원생(석사·박사): 인간공학·생체역학·HCI·산업안전 연구에 관심 있는 분</strong><br>
+                <strong>지원방법: seobin.choi&#64;inu.ac.kr 로 이메일!</strong> (대학원 지원자는 CV 첨부)
               </p>
             </div>
           </div>
@@ -340,6 +348,53 @@
       <div class="news-list">
         <!-- 사진을 추가하려면 .news-gallery 안에 <img src="..." class="news-img"> 를 넣으세요. 첫 이미지에 active 클래스. 2장 이상이면 화살표 자동 표시. -->
 
+        <div class="fade-in"><article class="news-card">
+          <div class="news-gallery">
+              <img src="images/openlab1.jpg" alt="" class="news-img active">
+              <img src="images/openlab2.jpg" alt="" class="news-img">
+              <img src="images/openlab3.jpg" alt="" class="news-img">
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span class="news-card-date">2026.10</span>
+              <span class="news-card-icon">🔬</span>
+            </div>
+            <h3 class="news-card-title">2026 INU 공학페스티벌 EATED 포스터 발표 및 OPEN LAB</h3>
+            <p class="news-card-desc">INU 공학페스티벌에서 EATED 연구 포스터 발표를 진행하고, OPEN LAB 행사를 열었습니다.<br>OPEN LAB에서는 연구실을 찾아온 학생들에게 OEB Lab의 연구 분야와 활동을 소개했습니다. 방문해 주신 모든 분들께 감사드립니다!<br>Poster presentation and Open Lab at the 2026 INU Engineering Festival.</p>
+          </div>
+        </article></div>
+
+        <div class="fade-in"><article class="news-card">
+          <div class="news-gallery">
+              <img src="images/nrf1.jpg" alt="2026년도 이공분야 석사과정생연구장려금 지원사업 선정" class="news-img active" style="object-fit:contain">
+              <img src="images/nrf2.jpg" alt="석사과정생연구장려금 과제 주요 내용" class="news-img" style="object-fit:contain">
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span class="news-card-date">2026.09</span>
+              <span class="news-card-icon">🏆</span>
+            </div>
+            <h3 class="news-card-title">2026년도 이공분야 석사과정생연구장려금 지원사업 선정</h3>
+            <p class="news-card-desc"><strong>문시아</strong> 석사연구원이 한국연구재단 주관 「2026년도 이공분야 석사과정생연구장려금 지원사업」에 선정되었습니다. 축하합니다!<br>과제명: 「ANC(능동소음차단) 및 이중과제 환경에서의 청각적 상황인식 저하 메커니즘 규명 및 보행자 안전성 평가 연구」 (2026.09–2027.08, 연구비 1,200만원)<br>Sia Moon (MS student) was awarded the NRF Master's Research Grant (2026–2027) for research on auditory situation awareness degradation under ANC and dual-task conditions and its implications for pedestrian safety.</p>
+          </div>
+        </article></div>
+
+        <div class="fade-in"><article class="news-card">
+          <div class="news-gallery">
+              <img src="images/dinner1.jpg" alt="" class="news-img active">
+              <img src="images/dinner2.jpg" alt="" class="news-img">
+              <img src="images/dinner3.jpg" alt="" class="news-img">
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span class="news-card-date">2026.09</span>
+              <span class="news-card-icon">🍽️</span>
+            </div>
+            <h3 class="news-card-title">2026-2학기 개강맞이 회식</h3>
+            <p class="news-card-desc">2학기 개강을 맞아 OEB Lab 구성원들이 한자리에 모여 맛있는 식사와 함께 즐거운 시간을 보냈습니다. 이번 학기도 다 함께 힘내서 좋은 연구 이어가 봅시다! 🙌</p>
+          </div>
+        </article></div>
+
          <div class="fade-in"><article class="news-card">
           <div class="news-gallery">
               <img src="images/현장1.jpg" alt="" class="news-img active">
@@ -359,11 +414,12 @@
         <div class="fade-in"><article class="news-card no-images">
           <div class="news-content">
             <div class="news-meta">
-              <span class="news-card-date">2025.06</span>
+              <span class="news-card-date">2026.06</span>
               <span class="news-card-icon">👋</span>
             </div>
             <h3 class="news-card-title">3 undergraduate researchers joined the lab</h3>
             <p class="news-card-desc"><strong>조서현, 이찬우, 박효진</strong> 학부연구원이 OEB Lab에 합류했습니다. 환영합니다!</p>
+          </div>
         </article></div>
         
         <div class="fade-in"><article class="news-card">
@@ -837,15 +893,98 @@
 </div>
       
       <div class="research-panel" data-panel="projects" role="tabpanel">
-        <div class="fade-in">
-          <div class="project-empty">
-            <div class="project-empty-icon">🔬</div>
-            <p class="project-empty-text">진행 중인 연구 프로젝트가 곧 업데이트될 예정입니다.<br>Research projects will be updated soon.</p>
+        <!-- Ongoing / Completed 로 나누고, 과제마다 역할(PI / Participating Researcher) 태그 표시. 새 과제는 해당 그룹 맨 위에 .pub-item 추가 -->
+        <div class="project-group">
+          <div class="fade-in">
+            <h3 class="project-group-head">Ongoing Projects</h3>
+            <p class="project-group-desc">진행 중인 연구과제</p>
           </div>
+
+          <div class="fade-in"><div class="pub-item">
+            <p class="pub-title">Research projects at Incheon National University will be updated soon.</p>
+            <p class="project-title-ko">인천대학교 부임 이후 진행 중인 연구과제가 곧 업데이트될 예정입니다.</p>
+          </div></div>
+        </div>
+
+        <div class="project-group">
+          <div class="fade-in">
+            <h3 class="project-group-head">Completed Projects</h3>
+            <p class="project-group-desc">완료된 연구과제</p>
+          </div>
+
+          <p class="fade-in project-affil">As Principal Investigator · 연구책임자</p>
+          <div class="fade-in"><div class="pub-item">
+            <p class="pub-title">Construction of Korean Gait Pattern Big Database for Smart Healthcare and its AI Application</p>
+            <p class="project-title-ko">스마트 헬스케어를 위한 한국인 보행패턴 빅데이터베이스 구축 및 AI 활용</p>
+            <p class="pub-meta"><span class="pub-year">2022.06 – 2023.05</span> <span class="pub-journal">National Research Foundation of Korea (한국연구재단)</span> · 창의도전연구기반지원사업</p>
+            <p class="project-role-line"><span class="project-role-text">Principal Investigator</span> · UNIST</p>
+          </div></div>
+
+          <p class="fade-in project-affil">As Participating Researcher · 참여연구원</p>
+          <div class="fade-in"><div class="pub-item">
+            <p class="pub-title">Exoskeletons for Commercial Dungeness Crab Fishing to Reduce Musculoskeletal Injuries</p>
+            <p class="pub-meta"><span class="pub-year">2024.01 – 2025.02</span> <span class="pub-journal">National Institute for Occupational Safety and Health (NIOSH), USA</span></p>
+            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · Oregon State Univ. · Texas A&amp;M Univ.</p>
+          </div></div>
+          <div class="fade-in"><div class="pub-item">
+            <p class="pub-title">Smart Forestry - Paving the Way from Forest Restoration to Mass Timber</p>
+            <p class="pub-meta"><span class="pub-year">2024.01 – 2025.02</span> <span class="pub-journal">Economic Development Administration, U.S. Department of Commerce</span></p>
+            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · Oregon State Univ. · Texas A&amp;M Univ.</p>
+          </div></div>
+          <div class="fade-in"><div class="pub-item">
+            <p class="pub-title">Clinical Evaluation and Optimal Management of Minimally Invasive Spine Surgery for Patients with Lumbar Spinal Stenosis Using Multi-domain Feature Extraction of Spinal Medical Image and Gait Pattern</p>
+            <p class="project-title-ko">척추 의료영상과 보행패턴의 다중 도메인 특징 추출을 활용한 요추관 협착증 환자의 최소침습 척추수술 임상 평가 및 최적 관리</p>
+            <p class="pub-meta"><span class="pub-year">2021.12 – 2022.12</span> <span class="pub-journal">UNIST (울산과학기술원)</span></p>
+            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · UNIST</p>
+          </div></div>
+          <div class="fade-in"><div class="pub-item">
+            <p class="pub-title">Development of AI-based System for Gait Analysis</p>
+            <p class="project-title-ko">AI 기반 보행 분석 시스템 개발</p>
+            <p class="pub-meta"><span class="pub-year">2021.01 – 2023.05</span> <span class="pub-journal">Ulsan Metropolitan City (울산광역시)</span></p>
+            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · UNIST</p>
+          </div></div>
+          <div class="fade-in"><div class="pub-item">
+            <p class="pub-title">Biomechanical and Cognitive Research on the Risk of Walking with Smartphone Use</p>
+            <p class="project-title-ko">보행 중 스마트폰 사용 위험성에 대한 생체역학적·인지적 연구</p>
+            <p class="pub-meta"><span class="pub-year">2018.03 – 2021.02</span> <span class="pub-journal">National Research Foundation of Korea (한국연구재단)</span></p>
+            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · UNIST</p>
+          </div></div>
+          <div class="fade-in"><div class="pub-item">
+            <p class="pub-title">Ergonomic Evaluation on a Wedged Insole for Military Supplies</p>
+            <p class="project-title-ko">군 보급용 자세보정 인솔의 인간공학적 평가</p>
+            <p class="pub-meta"><span class="pub-year">2018.03 – 2021.02</span> <span class="pub-journal">Agency for Defense Development (국방과학연구소)</span></p>
+            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · UNIST</p>
+          </div></div>
+          <div class="fade-in"><div class="pub-item">
+            <p class="pub-title">An Empirical Study on the UI/UX of Patient Transfer Assistance Robot "Carrybot" and Walking Rehabilitation Robot "Morning Walk"</p>
+            <p class="project-title-ko">환자 이송 보조 로봇 "Carrybot"과 보행 재활 로봇 "Morning Walk"의 UI/UX 실증 연구</p>
+            <p class="pub-meta"><span class="pub-year">2015.12 – 2017.05</span> <span class="pub-journal">Hyundai Heavy Industries (현대중공업)</span></p>
+            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · UNIST</p>
+          </div></div>
+          <div class="fade-in"><div class="pub-item">
+            <p class="pub-title">Development of a Design Guideline to Optimize the Usability of Stick Vacuum Cleaner</p>
+            <p class="project-title-ko">스틱형 청소기의 사용성 최적화를 위한 디자인 가이드라인 개발</p>
+            <p class="pub-meta"><span class="pub-year">2015.07 – 2016.06</span> <span class="pub-journal">LG Electronics (LG전자)</span></p>
+            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · UNIST</p>
+          </div></div>
+          <div class="fade-in"><div class="pub-item">
+            <p class="pub-title">Development of an Assessment Tool for Lumbar Spine Stability Using Surface Electromyography and Inertial Sensors</p>
+            <p class="project-title-ko">표면 근전도와 관성센서를 활용한 요추 안정성 평가 도구 개발</p>
+            <p class="pub-meta"><span class="pub-year">2015</span> <span class="pub-journal">National Research Foundation of Korea (한국연구재단)</span></p>
+            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · UNIST</p>
+          </div></div>
         </div>
       </div>
 
       <div class="research-panel" data-panel="awards" role="tabpanel">
+        <div class="fade-in"><div class="award-item">
+          <span class="award-date">2026.09</span>
+          <div>
+            <p class="award-title">2026년도 이공분야 석사과정생연구장려금 지원사업 선정 (한국연구재단)</p>
+            <p class="award-detail"><strong>문시아</strong> 석사연구원</p>
+          </div>
+        </div></div>
+
         <div class="fade-in"><div class="award-item">
           <span class="award-date">2026.01</span>
           <div>
@@ -859,6 +998,22 @@
           <div>
             <p class="award-title">Best Experimental Paper Award · HFES OETG (ASPIRE 2025)</p>
             <p class="award-detail">Effects of Back-Support Exoskeletons on Low Back Muscle Activity and Trunk Posture Associated with Simulated Manual Timber Felling</p>
+          </div>
+        </div></div>
+
+        <div class="fade-in"><div class="award-item">
+          <span class="award-date">2025.11</span>
+          <div>
+            <p class="award-title">2025년 산업경영공학과 학술공모전 우수상</p>
+            <p class="award-detail"><strong>윤종규</strong> 학부연구원</p>
+          </div>
+        </div></div>
+
+        <div class="fade-in"><div class="award-item">
+          <span class="award-date">2025.09</span>
+          <div>
+            <p class="award-title">2025년 INU 공학페스티벌 OPEN LAB 최우수상</p>
+            <p class="award-detail">OEB Lab</p>
           </div>
         </div></div>
 
