@@ -217,10 +217,15 @@
     .project-group { margin-bottom: 48px; }
     .project-group-head { font-family: 'Source Serif 4', serif; font-size: 20px; font-weight: 500; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 8px; margin-bottom: 4px; display: inline-block; }
     .project-group-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
-    .project-affil { font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 28px; }
     .project-title-ko { font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-top: 4px; }
-    .project-role-line { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
-    .project-role-text { font-weight: 600; color: var(--accent); }
+    .project-meta { font-size: 13px; color: var(--text-muted); margin-top: 6px; line-height: 1.6; }
+    .project-meta .pub-year { margin-right: 0; }
+    .project-meta .project-role-text { white-space: nowrap; }
+    .project-funder { font-weight: 600; color: var(--accent); }
+    .project-box { border: 1px solid var(--border); border-radius: 16px; background: var(--card); padding: 4px 24px; margin-top: 20px; }
+    .project-box .fade-in:last-child .pub-item { border-bottom: none; }
+    @media (max-width: 520px) { .project-box { padding: 4px 16px; } }
+    .project-role-text { font-weight: 600; color: var(--text); }
     .teaching-years { display: flex; flex-direction: column; gap: 56px; }
     .teaching-year-label { font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; color: var(--accent); margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--accent); display: inline-block; padding-right: 24px; }
     .teaching-semester-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; }
@@ -920,10 +925,27 @@
             <p class="project-group-desc">진행 중인 연구과제</p>
           </div>
 
+          <div class="project-box">
           <div class="fade-in"><div class="pub-item">
-            <p class="pub-title">Research projects at Incheon National University will be updated soon.</p>
-            <p class="project-title-ko">인천대학교 부임 이후 진행 중인 연구과제가 곧 업데이트될 예정입니다.</p>
+            <p class="pub-title">근골격계부담작업 유해요인 조사 및 직무스트레스 조사</p>
+            <p class="project-meta"><span class="pub-year">2026.06 – 2026.11</span> · <span class="project-funder">Seoul Metro (서울교통공사)</span> · <span class="project-role-text">Co-Principal Investigator</span></p>
           </div></div>
+          <div class="fade-in"><div class="pub-item">
+            <p class="pub-title">Development of a Data-driven Assessment and Prediction Model for Ergonomic Safety and Health Risk Factors</p>
+            <p class="project-title-ko">데이터 기반 인간공학적 안전·건강 위험요인 평가 및 예측 모델 개발</p>
+            <p class="project-meta"><span class="pub-year">2026.05 – 2027.04</span> · <span class="project-funder">Incheon National University (인천대학교)</span>, 신임교수 자체연구과제 · <span class="project-role-text">Principal Investigator</span></p>
+          </div></div>
+          <div class="fade-in"><div class="pub-item">
+            <p class="pub-title">Tri-axial Workload Prediction and Proactive Risk Management Framework for First Responder Health and Safety</p>
+            <p class="project-title-ko">재난 대응 인력의 건강 및 안전을 위한 신체-인지-심리 3축 작업부하 예측 및 선제적 위험 관리 체계 연구</p>
+            <p class="project-meta"><span class="pub-year">2026.03 – 2030.02</span> · <span class="project-funder">National Research Foundation of Korea (한국연구재단)</span>, 신진연구(유형B) · <span class="project-role-text">Principal Investigator</span></p>
+          </div></div>
+          <div class="fade-in"><div class="pub-item">
+            <p class="pub-title">Development of an Abnormal Gait Assessment and Prediction Model Using Contactless Gait Data</p>
+            <p class="project-title-ko">비접촉 기반 보행 데이터를 활용한 이상 보행 평가 및 예측 모델 개발</p>
+            <p class="project-meta"><span class="pub-year">2025.05 – 2027.04</span> · <span class="project-funder">Incheon National University (인천대학교)</span>, 신임교원 연구환경 조성사업 · <span class="project-role-text">Principal Investigator</span></p>
+          </div></div>
+          </div>
         </div>
 
         <div class="project-group">
@@ -932,67 +954,60 @@
             <p class="project-group-desc">완료된 연구과제</p>
           </div>
 
-          <p class="fade-in project-affil">As Principal Investigator · 연구책임자</p>
+          <div class="project-box">
+          <div class="fade-in"><div class="pub-item">
+            <p class="pub-title">르노코리아 영업사업소 RG 근골격계질환 유해요인 조사 및 예방프로그램 구축</p>
+            <p class="project-meta"><span class="pub-year">2025.12 – 2026.02</span> · <span class="project-funder">Renault Korea (르노코리아)</span> · <span class="project-role-text">Principal Investigator</span></p>
+          </div></div>
           <div class="fade-in"><div class="pub-item">
             <p class="pub-title">Construction of Korean Gait Pattern Big Database for Smart Healthcare and its AI Application</p>
             <p class="project-title-ko">스마트 헬스케어를 위한 한국인 보행패턴 빅데이터베이스 구축 및 AI 활용</p>
-            <p class="pub-meta"><span class="pub-year">2022.06 – 2023.05</span> <span class="pub-journal">National Research Foundation of Korea (한국연구재단)</span> · 창의도전연구기반지원사업</p>
-            <p class="project-role-line"><span class="project-role-text">Principal Investigator</span> · UNIST</p>
+            <p class="project-meta"><span class="pub-year">2022.06 – 2023.05</span> · <span class="project-funder">National Research Foundation of Korea (한국연구재단)</span>, 창의도전연구기반지원사업 · <span class="project-role-text">Principal Investigator</span> (UNIST)</p>
           </div></div>
-
-          <p class="fade-in project-affil">As Participating Researcher · 참여연구원</p>
           <div class="fade-in"><div class="pub-item">
             <p class="pub-title">Exoskeletons for Commercial Dungeness Crab Fishing to Reduce Musculoskeletal Injuries</p>
-            <p class="pub-meta"><span class="pub-year">2024.01 – 2025.02</span> <span class="pub-journal">National Institute for Occupational Safety and Health (NIOSH), USA</span></p>
-            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · Oregon State Univ. · Texas A&amp;M Univ.</p>
+            <p class="project-meta"><span class="pub-year">2024.01 – 2025.02</span> · <span class="project-funder">National Institute for Occupational Safety and Health (NIOSH), USA</span> · <span class="project-role-text">Participating Researcher</span> (Oregon State Univ. / Texas A&amp;M Univ.)</p>
           </div></div>
           <div class="fade-in"><div class="pub-item">
             <p class="pub-title">Smart Forestry - Paving the Way from Forest Restoration to Mass Timber</p>
-            <p class="pub-meta"><span class="pub-year">2024.01 – 2025.02</span> <span class="pub-journal">Economic Development Administration, U.S. Department of Commerce</span></p>
-            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · Oregon State Univ. · Texas A&amp;M Univ.</p>
+            <p class="project-meta"><span class="pub-year">2024.01 – 2025.02</span> · <span class="project-funder">Economic Development Administration, U.S. Department of Commerce</span> · <span class="project-role-text">Participating Researcher</span> (Oregon State Univ. / Texas A&amp;M Univ.)</p>
           </div></div>
           <div class="fade-in"><div class="pub-item">
             <p class="pub-title">Clinical Evaluation and Optimal Management of Minimally Invasive Spine Surgery for Patients with Lumbar Spinal Stenosis Using Multi-domain Feature Extraction of Spinal Medical Image and Gait Pattern</p>
             <p class="project-title-ko">척추 의료영상과 보행패턴의 다중 도메인 특징 추출을 활용한 요추관 협착증 환자의 최소침습 척추수술 임상 평가 및 최적 관리</p>
-            <p class="pub-meta"><span class="pub-year">2021.12 – 2022.12</span> <span class="pub-journal">UNIST (울산과학기술원)</span></p>
-            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · UNIST</p>
+            <p class="project-meta"><span class="pub-year">2021.12 – 2022.12</span> · <span class="project-funder">UNIST (울산과학기술원)</span> · <span class="project-role-text">Participating Researcher</span></p>
           </div></div>
           <div class="fade-in"><div class="pub-item">
             <p class="pub-title">Development of AI-based System for Gait Analysis</p>
             <p class="project-title-ko">AI 기반 보행 분석 시스템 개발</p>
-            <p class="pub-meta"><span class="pub-year">2021.01 – 2023.05</span> <span class="pub-journal">Ulsan Metropolitan City (울산광역시)</span></p>
-            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · UNIST</p>
+            <p class="project-meta"><span class="pub-year">2021.01 – 2023.05</span> · <span class="project-funder">Ulsan Metropolitan City (울산광역시)</span> · <span class="project-role-text">Participating Researcher</span> (UNIST)</p>
           </div></div>
           <div class="fade-in"><div class="pub-item">
             <p class="pub-title">Biomechanical and Cognitive Research on the Risk of Walking with Smartphone Use</p>
             <p class="project-title-ko">보행 중 스마트폰 사용 위험성에 대한 생체역학적·인지적 연구</p>
-            <p class="pub-meta"><span class="pub-year">2018.03 – 2021.02</span> <span class="pub-journal">National Research Foundation of Korea (한국연구재단)</span></p>
-            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · UNIST</p>
+            <p class="project-meta"><span class="pub-year">2018.03 – 2021.02</span> · <span class="project-funder">National Research Foundation of Korea (한국연구재단)</span> · <span class="project-role-text">Participating Researcher</span> (UNIST)</p>
           </div></div>
           <div class="fade-in"><div class="pub-item">
             <p class="pub-title">Ergonomic Evaluation on a Wedged Insole for Military Supplies</p>
             <p class="project-title-ko">군 보급용 자세보정 인솔의 인간공학적 평가</p>
-            <p class="pub-meta"><span class="pub-year">2018.03 – 2021.02</span> <span class="pub-journal">Agency for Defense Development (국방과학연구소)</span></p>
-            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · UNIST</p>
+            <p class="project-meta"><span class="pub-year">2018.03 – 2021.02</span> · <span class="project-funder">Agency for Defense Development (국방과학연구소)</span> · <span class="project-role-text">Participating Researcher</span> (UNIST)</p>
           </div></div>
           <div class="fade-in"><div class="pub-item">
             <p class="pub-title">An Empirical Study on the UI/UX of Patient Transfer Assistance Robot "Carrybot" and Walking Rehabilitation Robot "Morning Walk"</p>
             <p class="project-title-ko">환자 이송 보조 로봇 "Carrybot"과 보행 재활 로봇 "Morning Walk"의 UI/UX 실증 연구</p>
-            <p class="pub-meta"><span class="pub-year">2015.12 – 2017.05</span> <span class="pub-journal">Hyundai Heavy Industries (현대중공업)</span></p>
-            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · UNIST</p>
+            <p class="project-meta"><span class="pub-year">2015.12 – 2017.05</span> · <span class="project-funder">Hyundai Heavy Industries (현대중공업)</span> · <span class="project-role-text">Participating Researcher</span> (UNIST)</p>
           </div></div>
           <div class="fade-in"><div class="pub-item">
             <p class="pub-title">Development of a Design Guideline to Optimize the Usability of Stick Vacuum Cleaner</p>
             <p class="project-title-ko">스틱형 청소기의 사용성 최적화를 위한 디자인 가이드라인 개발</p>
-            <p class="pub-meta"><span class="pub-year">2015.07 – 2016.06</span> <span class="pub-journal">LG Electronics (LG전자)</span></p>
-            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · UNIST</p>
+            <p class="project-meta"><span class="pub-year">2015.07 – 2016.06</span> · <span class="project-funder">LG Electronics (LG전자)</span> · <span class="project-role-text">Participating Researcher</span> (UNIST)</p>
           </div></div>
           <div class="fade-in"><div class="pub-item">
             <p class="pub-title">Development of an Assessment Tool for Lumbar Spine Stability Using Surface Electromyography and Inertial Sensors</p>
             <p class="project-title-ko">표면 근전도와 관성센서를 활용한 요추 안정성 평가 도구 개발</p>
-            <p class="pub-meta"><span class="pub-year">2015</span> <span class="pub-journal">National Research Foundation of Korea (한국연구재단)</span></p>
-            <p class="project-role-line"><span class="project-role-text">Participating Researcher</span> · UNIST</p>
+            <p class="project-meta"><span class="pub-year">2015</span> · <span class="project-funder">National Research Foundation of Korea (한국연구재단)</span> · <span class="project-role-text">Participating Researcher</span> (UNIST)</p>
           </div></div>
+          </div>
         </div>
       </div>
 
